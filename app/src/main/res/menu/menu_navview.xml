@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/opcion1"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Opcion 1"/>
+        <item
+            android:id="@+id/opcion2"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Opcion 2"/>
+        <item
+            android:id="@+id/opcion3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Opcion 3"/>
+    </group>
+    <item
+        android:id="@+id/navigation_subheader"
+        android:title="mas opciones">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/subOpcion1"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Opcion 4"/>
+            <item
+                android:id="@+id/subOpcion2"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Opcion 4"/>
+            </group>
+        </menu>
+    </item>
+</menu>

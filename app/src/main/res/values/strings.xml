@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">GuateTur</string>
     <string name="title_activity_login">Iniciar Sesion</string>
-
-    <!-- Strings related to login -->
     <string name="prompt_email">Correo</string>
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">Iniciar Sesion</string>
-    <string name="title_activity_sitios">Sitios</string>
+    <string name="action_register">Registrarse</string>
 </resources>
