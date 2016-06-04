@@ -69,6 +69,7 @@ public class FragmentSitios extends Fragment {
 
                                 listaSitios.setAdapter(adapter);
                                 listaSitios.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+                                listaSitios.notifyAll();
 
                             }
                         }catch (Exception ex){
@@ -78,7 +79,7 @@ public class FragmentSitios extends Fragment {
                 }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError err) {
-                Log.d("Error: Response ",err.getMessage());
+                //Log.d("Error: Response ",err.getMessage());
             }
         }
         );

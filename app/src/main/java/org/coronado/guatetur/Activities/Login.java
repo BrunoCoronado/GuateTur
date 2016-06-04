@@ -3,6 +3,7 @@ package org.coronado.guatetur.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.support.design.widget.Snackbar;
 import android.support.v4.media.RatingCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.coronado.guatetur.R;
+import org.coronado.guatetur.bean.Usuario;
+import org.coronado.guatetur.bean.UsuarioLogeado;
 import org.coronado.guatetur.volley.WebService;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -31,6 +34,7 @@ public class Login extends AppCompatActivity {
     private EditText txtCorreo = null;
     private EditText txtPassword = null;
     private Button btnIniciarSesion = null;
+    private Usuario userLogged = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +48,8 @@ public class Login extends AppCompatActivity {
 
         btnIniciarSesion.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Bienvenido",Toast.LENGTH_LONG).show();
+            public void onClick(final View v) {
+
                 Map<String,String> params =  new HashMap<String, String>();
                 params.put("correo",txtCorreo.getText().toString());
                 params.put("password", txtPassword.getText().toString());
@@ -56,10 +60,10 @@ public class Login extends AppCompatActivity {
                         try{
                             JSONArray listaUsuarios=response.getJSONArray("user");
                             if(listaUsuarios.length()>0){
-                                //Toast.makeText(getApplicationContext(),"Bienvenido",Toast.LENGTH_LONG).show();
                                 JSONObject user=listaUsuarios.getJSONObject(0);
-
-                               // startActivity(new Intent(Login.this,Sitios.class));
+                                userLogged = new Usuario(user.getInt("id_usuario"),user.getString("nombre"),user.getString("correo"),user.getString("nick"));
+                                UsuarioLogeado.setUsuario(userLogged);
+                                startActivity(new Intent(Login.this,MainActivity.class));
                             }else{
                                 Toast.makeText(getApplicationContext(),"Verifique sus Credenciales",Toast.LENGTH_LONG).show();
                             }

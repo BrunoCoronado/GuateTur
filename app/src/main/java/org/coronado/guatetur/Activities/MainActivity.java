@@ -3,6 +3,7 @@ package org.coronado.guatetur.Activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,14 +13,18 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import org.coronado.guatetur.Fragments.FragmentHoteles;
 import org.coronado.guatetur.Fragments.FragmentSitios;
 import org.coronado.guatetur.R;
+import org.coronado.guatetur.bean.UsuarioLogeado;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar appbar;
     private DrawerLayout drawerLayout;
     private NavigationView navView;
+    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         navView = (NavigationView)findViewById(R.id.navview);
+        view = (View)findViewById(R.id.drawer_layout);
+
+        if(UsuarioLogeado.getSesionIniciada() != false){
+            Snackbar.make(view,"Bienvenido "+UsuarioLogeado.getUsuario().getNick(),Snackbar.LENGTH_LONG).show();
+            UsuarioLogeado.setSesionIniciada(false);
+        }
+
+
 
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -50,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("NavigationView", "opcion1");
                     break;
                 case R.id.opcion2:
-                   /* fragment = new Fragment2();
+                   fragment = new FragmentHoteles();
                     fragmentTransaction = true;
-                    break;*/
+                    break;
                 case R.id.opcion3:
                     /*fragment = new Fragment3();
                     fragmentTransaction = true;
