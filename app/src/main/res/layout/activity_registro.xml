@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/colorPrimary"
+    tools:context=".Activities.Registro">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="1dp"
+        android:id="@+id/loginTitle"
+        android:src="@drawable/titulo"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/registerName"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColorHint="@color/colorLoginHint"
+        android:textColor="@color/colorLoginText"
+        android:backgroundTint="@color/colorLoginText"
+        android:layout_below="@+id/loginTitle"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/txtUsuarioRegistrado"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/registerUser"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColorHint="@color/colorLoginHint"
+        android:textColor="@color/colorLoginText"
+        android:backgroundTint="@color/colorLoginText"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtNombre"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/txtCorreoRegistrado"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColorHint="@color/colorLoginHint"
+        android:textColor="@color/colorLoginText"
+        android:backgroundTint="@color/colorLoginText"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtUsuarioRegistrado"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/txtPasswordRegistrado"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_password"
+        android:imeActionId="@+id/login"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColor="@color/colorLoginText"
+        android:textColorHint="@color/colorLoginHint"
+        android:backgroundTint="@color/colorLoginText"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtCorreoRegistrado"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnRegistrarse"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_register"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtPasswordRegistrado"
+        android:textColor="@color/colorLoginText"
+        android:background="@color/buttonBackground"
+        android:layout_marginTop="15dp"/>
+</RelativeLayout>

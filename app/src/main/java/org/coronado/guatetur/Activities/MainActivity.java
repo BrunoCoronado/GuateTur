@@ -1,7 +1,11 @@
 package org.coronado.guatetur.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -17,6 +21,7 @@ import android.view.View;
 
 import org.coronado.guatetur.Fragments.FragmentHoteles;
 import org.coronado.guatetur.Fragments.FragmentSitios;
+import org.coronado.guatetur.Fragments.LoadingView;
 import org.coronado.guatetur.R;
 import org.coronado.guatetur.bean.UsuarioLogeado;
 
@@ -25,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navView;
     private View view;
+    private Fragment fragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentSitios()).commit();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentSitios()).commit();
         appbar = (Toolbar)findViewById(R.id.appbar);
         setSupportActionBar(appbar);
 
@@ -43,18 +48,17 @@ public class MainActivity extends AppCompatActivity {
         view = (View)findViewById(R.id.drawer_layout);
 
         if(UsuarioLogeado.getSesionIniciada() != false){
-            Snackbar.make(view,"Bienvenido "+UsuarioLogeado.getUsuario().getNick(),Snackbar.LENGTH_LONG).show();
+            Snackbar snackbar =  Snackbar.make(view,"Bienvenido "+UsuarioLogeado.getUsuario().getNick(),Snackbar.LENGTH_LONG);
+            snackbar.setActionTextColor(Color.WHITE);
+            snackbar.getView().setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            snackbar.show();
             UsuarioLogeado.setSesionIniciada(false);
         }
-
-
-
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
 
             boolean fragmentTransaction = false;
-            Fragment fragment = null;
 
             switch (menuItem.getItemId()) {
                 case R.id.opcion1:

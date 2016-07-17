@@ -7,6 +7,7 @@ public class SitioTuristico {
     private int id_sitioTuristico;
     private String _nombre;
     private String _descripcion;
+    private String _urlImagen;
 
     public void setId_sitioTuristico(int _id){
         this.id_sitioTuristico = _id;
@@ -22,6 +23,14 @@ public class SitioTuristico {
 
     public String getNombre(){
         return this._nombre;
+    }
+
+    public String get_urlImagen() {
+        return _urlImagen;
+    }
+
+    public void set_urlImagen(String _urlImagen) {
+        this._urlImagen = _urlImagen;
     }
 
     public void setDescripcion(String descripcion){

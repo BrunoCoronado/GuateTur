@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemVisita"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_visita"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        card_view:cardCornerRadius="4dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        android:layout_alignParentEnd="true">
+
+        <FrameLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/frameLayoutvisita">
+
+            <ImageView
+                android:layout_width="378dp"
+                android:layout_height="213dp"
+                android:id="@+id/imgVisita"
+                android:layout_gravity="center_horizontal|top" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblNombreVisita"
+                android:text="sitio"
+                android:textSize="30dp"
+                android:textColor="@color/cardview_light_background"
+                android:layout_gravity="left|bottom"
+                android:fontFamily="sans-serif-light"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:gravity="center"
+                android:background="@color/listBackgroundText"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblDescripcionVisita"
+            android:text="Descripcion del Sitio"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_alignBottom="@+id/card_Visita"
+            android:layout_gravity="bottom"
+            android:paddingBottom="4dp"
+            android:paddingLeft="2dp"
+            android:layout_alignLeft="@+id/card_Visita"
+            android:layout_alignStart="@+id/card_Visita" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=">>"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_alignBottom="@+id/card_Visita"
+            android:layout_gravity="bottom|right"
+            android:paddingBottom="4dp"
+            android:paddingRight="10dp"
+            android:layout_alignLeft="@+id/card_Visita"
+            android:layout_alignStart="@+id/card_Visita" />
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

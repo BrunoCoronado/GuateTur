@@ -5,4 +5,7 @@
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">Iniciar Sesion</string>
     <string name="action_register">Registrarse</string>
+    <string name="splashString">Cargando Datos.....</string>
+    <string name="registerName">Nombre</string>
+    <string name="registerUser">Usuario</string>
 </resources>

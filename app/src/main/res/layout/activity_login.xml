@@ -29,7 +29,10 @@
         android:layout_below="@+id/loginTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColorHint="@color/colorLoginHint"
+        android:textColor="@color/colorLoginText"
+        android:backgroundTint="@color/colorLoginText" />
 
     <EditText
         android:id="@+id/txtPassword"
@@ -45,7 +48,10 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="@color/colorLoginText"
+        android:textColorHint="@color/colorLoginHint"
+        android:backgroundTint="@color/colorLoginText" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -54,19 +60,25 @@
         android:layout_height="wrap_content"
         android:text="@string/action_sign_in"
         android:textStyle="bold"
+        android:background="@color/buttonBackground"
+        android:textColor="@color/colorLoginText"
         android:layout_below="@+id/txtPassword"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp" />
 
     <Button
-        android:id="@+id/btnregistro"
+        android:id="@+id/btnRegistro"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/action_register"
         android:textStyle="bold"
-        android:layout_below="@id/btnLogin"
+        android:background="@color/buttonBackground"
+        android:textColor="@color/colorLoginText"
+        android:layout_below="@+id/btnLogin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="66dp" />
+        android:layout_marginTop="29dp" />
+
 </RelativeLayout>
